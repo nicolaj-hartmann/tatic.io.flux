@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: opensearch-operator
+  namespace: opensearch-operator-system
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: opensearch-operator
+      version: ">=2.0.0 <3.0.0"
+      sourceRef:
+        kind: HelmRepository
+        name: opensearch-operator
+        namespace: opensearch-operator-system
+      interval: 12h
+  values:
+    manager:
+      resources:
+        limits:
+          cpu: 500m
+          memory: 512Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi

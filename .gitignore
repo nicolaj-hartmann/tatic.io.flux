@@ -1,0 +1,13 @@
+# Flux generated files
+clusters/production/flux-system/gotk-components.yaml
+clusters/production/flux-system/gotk-sync.yaml
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
